@@ -1,0 +1,26 @@
+<package>
+    <name>infantry_model</name>
+    <version>1.0.0</version>
+    <description>
+        The infantry_model package provides quick bringup for RoboMaster AI Robot
+    </description>
+    <author>RoboMaster</author>
+    <maintainer email="robomaster@dji.com">RoboMaster</maintainer>
+    <license>GPL 3.0 </license>
+    <url>https://github.com/RoboMaster/infantry</url>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>roslaunch</build_depend>
+    <build_depend>infantry_msgs</build_depend>
+
+
+    <run_depend>joint_state_publisher</run_depend>
+    <run_depend>robot_state_publisher</run_depend>
+    <run_depend>rviz</run_depend>
+    <run_depend>xacro</run_depend>
+    <run_depend>infantry_msgs</run_depend>
+
+    <export>
+    </export>
+
+</package>

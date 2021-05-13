@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name="camera_name" value="MER139" />
+
+    <rosparam command="load" file="$(find infantry_bringup)/config/detection.yaml"/>
+    
+    <node pkg="rosbag" type="play" name="player" output="screen" args="-l /home/babyxin/dev/serial_ws/2021-03-23-16-33-15.bag"/>
+    
+</launch>

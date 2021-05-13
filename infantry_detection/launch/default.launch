@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="camera_name" default="MER139" />
+    <arg name="svm_model_path" value="$(find infantry_detection)/config/123svm.xml" />
+   
+   	<group>
+	    <node pkg="infantry_detection" type="infantry_detection_node" name="$(arg camera_name)_detection" output="screen"> 
+            <param name="camera_name" type="string" value="$(arg camera_name)" />
+			<param name="svm_model_path" type="string" value="$(arg svm_model_path)" />
+	    </node>
+	</group>
+
+</launch>

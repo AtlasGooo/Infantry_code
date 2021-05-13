@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <master auto="start"/>
+
+    <arg name="camera_name" default="MER139" />
+    <rosparam command="load" file="$(find infantry_camera)/config/MER139.yaml" ns="$(arg camera_name)"/>
+
+    <!-- <node pkg="infantry_camera" type="infantry_camera_node" name="$(arg camera_name)_camera" output="screen" respawn="false">
+        <param name="camera_name" type="string" value="$(arg camera_name)" />
+    </node> -->
+
+</launch>

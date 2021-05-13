@@ -1,0 +1,2 @@
+#There are some params which will be loaded
+enemy_color_bool: true # 1 for red and 0 for blue 

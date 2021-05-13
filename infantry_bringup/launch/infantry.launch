@@ -1,0 +1,8 @@
+<launch>
+
+    <arg name="camera_name" value="MER139" />
+    <rosparam command="load" file="$(find infantry_bringup)/config/detection.yaml"/>
+    <include file="$(find infantry_detection)/launch/default.launch"/>
+    <include file="$(find infantry_camera)/launch/MER139.launch"/>
+    
+</launch>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<robot name="visual">
+
+<material name="blue">
+  <color rgba="0 0 0.8 1"/>
+</material>
+<material name="black">
+  <color rgba="0 0 0 1"/>
+</material>
+<material name="white">
+  <color rgba="1 1 1 1"/>
+</material>
+<material name="red">
+  <color rgba="1 0 0 1"/>
+</material>
+
+<link name="base_link">
+  <visual>
+    <geometry>
+      <box size="0.57 0.47 0.12"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+</link>
+
+<link name="gimbal_base">
+  <visual>
+    <geometry>
+      <cylinder length="0.26" radius="0.08" />
+    </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+
+<joint name="gimbal_yaw_joint" type="continuous">
+  <parent link="base_link"/>
+    <child link="gimbal_base"/>
+  <axis xyz="0 0 1"/>
+  <origin xyz="0 0 0.19"/>
+</joint>
+
+<link name="barrel_base">
+  <visual>
+    <geometry>
+      <sphere radius="0.08" />
+    </geometry>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <material name="blue"/>
+  </visual>
+</link>
+
+
+<joint name="gimbal_pitch_joint" type="continuous">
+  <parent link="gimbal_base"/>
+    <child link="barrel_base"/>
+  <axis xyz="0 1 0"/>
+  <origin rpy="0 0 0" xyz="0 0 0.13"/>
+</joint>
+
+<link name="barrel">
+  <visual>
+    <geometry>
+      <cylinder  radius="0.08" length="0.16"/>
+    </geometry>
+    <material name="blue"/>
+  <origin xyz="0 0 0.08"/>
+  </visual>
+</link>
+
+
+
+<joint name="barrel_base_tf" type="fixed">
+  <parent link="barrel_base"/>
+    <child link="barrel"/>
+  <axis xyz="0 1 0"/>
+  <origin rpy="0 1.57075 0" />
+</joint>
+
+
+<link name="MER139">
+  <visual>
+    <geometry>
+      <box size="0.04 0.04 0.08"/>
+    </geometry>
+    <material name="red"/>
+  <origin xyz="0 0 0"/>
+  </visual>
+</link>
+
+<joint name="camera_tf" type="fixed">
+  <parent link="barrel"/>
+    <child link="MER139"/>
+  <axis xyz="0 1 0"/>
+  <origin rpy="0 0 -1.57075" xyz="0.04 0 0.16" />
+</joint>
+
+
+</robot>
